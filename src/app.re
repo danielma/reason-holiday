@@ -4,17 +4,18 @@
 
 let component = ReasonReact.statelessComponent("App");
 
-/* Day 2, JSX */
+let str = ReasonReact.stringToElement;
+
+/* Day 3, components are functions */
 let make = _children => {
   ...component,
   render: _self =>
     <div className="App">
       <h1>
-        (
-          ReasonReact.stringToElement(
-            {js|It's a beautiful 🎄 in the neighborhood|js}
-          )
-        )
+        (str("It's a beautiful"))
+        <ChristmasTree />
+        (str("in the neighborhood"))
       </h1>
+      <ComicSans> (str("attack of the clones")) </ComicSans>
     </div>
 };
