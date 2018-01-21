@@ -4,18 +4,17 @@
 
 let component = ReasonReact.statelessComponent("App");
 
+/* Day 2, JSX */
 let make = _children => {
   ...component,
   render: _self =>
-    ReactDOMRe.createElement(
-      "div",
-      ~props=ReactDOMRe.props(~className="App", ()),
-      [|
-        ReactDOMRe.createElement(
-          "h1",
-          ~props=ReactDOMRe.props(),
-          [|ReasonReact.stringToElement({js|Hello 🎄|js})|]
+    <div className="App">
+      <h1>
+        (
+          ReasonReact.stringToElement(
+            {js|It's a beautiful 🎄 in the neighborhood|js}
+          )
         )
-      |]
-    )
+      </h1>
+    </div>
 };
